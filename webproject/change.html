@@ -1,0 +1,142 @@
+<html>
+     <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>Password Change</title>
+    <style type="text/css">
+   .sal{
+            position :relative;
+            top:10px;
+            left:150px;
+            height:550px;
+            width:1000px;
+            border-top-style: groove;
+            border-style:double ;
+            border-left-style: ridge;
+            border-color:lightyellow;
+            border-width:50px;
+            background-image: url("https://media.istockphoto.com/photos/blue-abstract-background-or-texture-picture-id1138395421?k=6&m=1138395421&s=612x612&w=0&h=bJ1SRWujCgg3QWzkGPgaRiArNYohPl7-Wc4p_Fa_cyA=");
+            opacity: 0.8;
+        }
+        .s{
+            position: absolute;
+            left:320px;
+            top:50px;
+            color: white;
+            font-family:'mfg';
+            font-size: 2em;
+            border-radius: 15px;
+            border-color: lavenderblush;
+            border-style: groove;
+            border-top: indigo;
+            border-radius: 15px;
+            margin:12px;
+            
+            
+        }
+        .h{
+            position: absolute;
+            left:350px;
+            top:100px;
+            padding:10px;
+            font-style: normal;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+        }
+
+    </style>
+       <script type="text/javascript">
+        function verifyPassword() {
+          var pw = document.getElementById("newpsd").value;
+          //check empty password field
+          if(pw == "") {
+             document.getElementById("message").value;
+             alert("Fill the password please!");
+             return false;
+          }
+         
+         //minimum password length validation
+          if(pw.length < 8) {
+             document.getElementById("message").value;
+             alert("Password length must be atleast 8 characters");
+             return false;
+          }
+        
+        //maximum length of password validation
+          if(pw.length > 15) {
+             document.getElementById("message").value;
+             alert("Password length must not exceed 15 characters");
+             return false;
+          } 
+          else 
+          return true;
+        }
+        </script>
+      <script type="text/javascript"> 
+        function validateForm() { 
+            var us = document.forms["myform"]["us"]; 
+            var psd = document.forms["myform"]["psd"]; 
+            var newpsd = document.forms["myform"]["newpsd"]; 
+            var conpsd = document.forms["myform"]["conpsd"]; 
+      
+            if (us.value == "") { 
+                window.alert("Please enter username."); 
+                name.focus(); 
+                return false; 
+            } 
+      
+            if (psd.value == "") { 
+                window.alert("Please enter password."); 
+                address.focus(); 
+                return false; 
+            } 
+
+            if (newpsd.value == "") { 
+                window.alert("Please enter new password."); 
+                address.focus(); 
+                return false; 
+            } 
+
+            if (conpsd.value == "") { 
+                window.alert("Please re-enter password."); 
+                address.focus(); 
+                return false; 
+            } 
+
+        
+        } 
+    </script>
+     </head>
+    <body bgcolor="rgb(7, 12, 58)">
+    <h1 text align="center">Change Password</h1>
+   <form method="POST" action="psd.php" id="myform" >
+  
+   <div class="sal">
+    <h3 class="s"  bgcolor="lightyellow">LUXE DE BON TATSE</h3>
+<form action="psd.php" method="post"required>
+  <div class="h">
+    <label>USERNAME : 
+        <br><br><input type="text" value="" name="us"id="us" size="35px" onfocus="this.value=''"></label>
+        <br>
+        <br>
+        <label>PASSWORD : 
+            <br><br><input type="password" value="" name="psd" id="psd" size="35px"></label><br><br>
+            <label>ENTER YOUR NEW PASSWORD: 
+              <br><br><input type="password" value="" name="newpsd" id="newpsd" size="35px" onblur="return verifyPassword()"></label><br><br>
+              <span id = "message" style="color:red"></span>
+               <label>RE-ENTER YOUR NEW PASSWORD : 
+                <br><br><input type="password" value="" name="conpsd" id="conpsd" size="35px"></label><br><br>
+           
+    <br>
+                <br>
+                
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="submit" value="UPDATE PASSWORD" onfocus="return validateForm()" >
+                <!--<button onclick="open()" >Sign Up </button></p>--->
+                <input type=button onClick="location.href='login1.html'" value='SIGN UP'>
+              </div></form>
+<br>
+    <br>
+    <br>
+</div>
+
+   </body>
+    </html> 

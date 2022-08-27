@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            FASHION
+        </title>
+        <style>
+              body{
+            background-color: rgb(7, 12, 58);
+        }
+        .sall{
+            position :relative;
+            top:10px;
+            left:100px;
+            height:600px;
+            width:1150px;
+            margin:17px;
+            border-top-style: groove;
+            border-style:double ;
+            border-left-style: ridge;
+            border-color:lightyellow;
+            border-width:50px;
+            background-image: url("https://media.istockphoto.com/photos/blue-abstract-background-or-texture-picture-id1138395421?k=6&m=1138395421&s=612x612&w=0&h=bJ1SRWujCgg3QWzkGPgaRiArNYohPl7-Wc4p_Fa_cyA=");
+            opacity: 0.8;
+        }
+        .s{
+            position: absolute;
+            left:370px;
+            top:30px;
+            font-family:'mfg';
+            font-size: 2em;
+            border-radius: 15px;
+            border-color: lavenderblush;
+            border-style: groove;
+            border-top: indigo;
+            border-radius: 15px;
+            margin:12px;
+        }
+        .h{
+            position:fixed;
+            right:600px;
+            top:170px;
+            font-style: normal;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+        }
+        .l{
+            position:fixed;
+            right:400px;
+            top:575px;
+            font-style: normal;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+        }
+        input:focus{
+            background-color: greenyellow;
+        }
+        .required:after {
+    content:" *";
+    color: red;
+  }
+    </style>
+   <script>
+    function verifyPassword() {
+      var pw = document.getElementById("pswd").value;
+      //check empty password field
+      if(pw == "") {
+         document.getElementById("message").value;
+         alert("Fill the password please!");
+         return false;
+      }
+     
+     //minimum password length validation
+      if(pw.length < 8) {
+         document.getElementById("message").value;
+         alert("Password length must be atleast 8 characters");
+         return false;
+      }
+    
+    //maximum length of password validation
+      if(pw.length > 15) {
+         document.getElementById("message").value;
+         alert("Password length must not exceed 15 characters");
+         return false;
+      } 
+      else 
+      return true;
+    }
+    </script>
+   <script type="text/javascript">
+    function confirmPass() {
+        var pass = document.getElementById("pswd").value
+        var confPass = document.getElementById("con_pswd").value
+        if(pass != confPass) {
+            alert('Wrong confirm password !');
+        }
+    }
+</script>
+<script type="text/javascript">
+    function validateEmail() {
+        var emailText = document.getElementById('email').value;
+        var pattern = /^[a-zA-Z0-9\-_]+(\.[a-zA-Z0-9\-_]+)*@[a-z0-9]+(\-[a-z0-9]+)*(\.[a-z0-9]+(\-[a-z0-9]+)*)*\.[a-z]{2,4}$/;
+        if (pattern.test(emailText)) {
+            return true;
+        } 
+        else 
+        {
+            alert('Invalid email address: ' + emailText);
+            return false;
+        }
+    }
+
+    </script>
+    <script>
+    function phonenumber()
+{
+    var inputtxt=document.getElementById('phone').value;
+  var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+  if(inputtxt.match(phoneno))
+     {
+	   return true;      
+	 }
+   else
+     {
+	   alert("Not a valid Phone Number");
+	   return false;
+     }
+}
+    </script>
+      <script type="text/javascript"> 
+        function validateForm() { 
+            var mail = document.forms["myform"]["mail"];
+            var us = document.forms["myform"]["us"]; 
+            var phone = document.forms["myform"]["phone"];
+            var psd = document.forms["myform"]["psd"]; 
+            var check = document.forms["myform"]["check"]; 
+            if (mail.value == "") { 
+                window.alert("Please enter your email."); 
+                name.focus(); 
+                return false; 
+            } 
+      
+            if (us.value == "") { 
+                window.alert("Please enter username."); 
+                name.focus(); 
+                return false; 
+            } 
+            if (phone.value == "") { 
+                window.alert("Please enter your phone num."); 
+                name.focus(); 
+                return false; 
+            } 
+      
+            if (psd.value == "") { 
+                window.alert("Please enter password."); 
+                address.focus(); 
+                return false; 
+            } 
+           
+            
+      
+            return true; 
+        } 
+   
+    </script>
+    </head>
+    <body bgcolor="black">
+        <div class="sall">
+            <h3 class="s">LUXE DE BON TATSE</h3>
+            <form action="in1.php" method="post" class="h" name="myform" onSubmit="return validateForm()"  >
+                <label class="required">EMAIL : 
+                    <br><br><input type="text" value="" name="mail" size="45px" onfocus="this.value=''"  id="email" onblur="return validateEmail()" required></label>
+                    <br>
+                    <br>
+                    <label class="required">USERNAME : 
+                        <br><br><input type="text" value="" name="us" size="45px" onfocus="this.value=''" required></label>
+                        <br>
+                        <br>
+                    <label class="required">PHONE NO. : 
+                            <br><br><input type="text" id="phone" value="" name="phone" size="45px" onfocus="this.value=''" required onblur="return phonenumber()">
+                            <span id = "message" style="color:red"></span>
+                            </label>
+                            <br>
+                            <br>    
+                    <label class="required">PASSWORD : 
+                            <br><br><input type="password" id="pswd" value="" name="psd" size="45px" onfocus="this.value=''"  onblur="return verifyPassword()"required>
+                            <span id = "message" style="color:red"></span>
+                            </label>
+                            <br>
+                            <br>
+                       
+                    <label class="required">CONFIRM PASSWORD : 
+                    <br><br><input type="password" id="con_pswd"  value="" name="password"  size="45px" onfocus="this.value=''" onblur="confirmPass()" required>
+                    <span id = "message" style="color:red"></span></label>
+               
+                <br>
+                    <br>
+                    <label><input  type="checkbox" value=""  >Remember my information</label>
+                    <br>
+                    <br>
+                       &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <!--<button onclick="open()" >Sign Up </button></p>--->
+                    <input type="submit" onClick="location.href='index.html'" onFocus="return validateForm()" value='SIGN UP'>
+                </form>  
+    </div>
+</body>
+</html>
+            
